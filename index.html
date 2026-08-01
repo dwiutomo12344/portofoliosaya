@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Dwi Priyo Utomo - Public Relations & Communication Specialist</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        function handleImgError(img, fallbacks, placeholder) {
+            if (!img) return;
+            if (!img.dataset.fallbackIndex) {
+                img.dataset.fallbackIndex = '0';
+            }
+            var idx = parseInt(img.dataset.fallbackIndex, 10);
+            if (Array.isArray(fallbacks) && idx < fallbacks.length) {
+                img.dataset.fallbackIndex = (idx + 1).toString();
+                img.src = fallbacks[idx];
+            } else if (placeholder && img.src !== placeholder) {
+                img.src = placeholder;
+                img.onerror = null;
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            800: '#102a43',
+                            900: '#0f172a',
+                            950: '#080e1a',
+                        },
+                        gold: {
+                            400: '#e0c068',
+                            500: '#d4af37',
+                            600: '#b89228',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gold-border-glow:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-navy-950">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="sticky top-0 z-40 bg-navy-950/90 backdrop-blur-md border-b border-slate-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center font-heading font-bold text-navy-950 text-xl shadow-lg">
+                    DP
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-heading font-bold text-lg text-white group-hover:text-gold-400 transition-colors">Dwi Priyo Utomo</span>
+                    <span class="text-[11px] text-slate-400 tracking-wider uppercase font-semibold">PR & Communication Specialist</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#about" class="text-slate-300 hover:text-gold-400 transition-colors">Tentang Saya</a>
+                <a href="#experience" class="text-slate-300 hover:text-gold-400 transition-colors">Pengalaman</a>
+                <a href="#portfolio" class="text-slate-300 hover:text-gold-400 transition-colors">Portofolio Karya</a>
+                <a href="#skills" class="text-slate-300 hover:text-gold-400 transition-colors">Keahlian</a>
+                <a href="#contact" class="bg-gradient-to-r from-gold-500 to-gold-600 text-navy-950 font-bold px-5 py-2.5 rounded-xl hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    Hubungi Saya
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-navy-950 text-white py-20 lg:py-28 overflow-hidden border-b border-slate-800">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-navy-900 border border-gold-500/30 px-3.5 py-1.5 rounded-full">
+                        <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+                        <span class="text-xs font-semibold text-gold-400 tracking-wide uppercase">Public Relations • Content Strategy • Media Relations</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight">
+                        Membangun Narasi,<br>
+                        <span class="bg-gradient-to-r from-gold-400 via-amber-300 to-gold-500 bg-clip-text text-transparent">
+                            Memperkuat Reputasi Media.
+                        </span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
+                        Lulusan Ilmu Komunikasi (Broadcast) Universitas Bina Sarana Informatika dengan pengalaman praktis dalam pembuatan skrip siaran, penulisan berita digital, manajemen kampanye media sosial, dan operasional hubungan masyarakat.
+                    </p>
+
+                    <div class="pt-4 flex flex-wrap gap-4 items-center">
+                        <a href="#portfolio" class="bg-gradient-to-r from-gold-500 to-gold-600 text-navy-950 font-bold px-7 py-3.5 rounded-xl shadow-xl hover:shadow-gold-500/20 transition-all flex items-center gap-2">
+                            <span>Lihat Karya Portofolio</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#contact" class="border border-slate-700 bg-navy-900/80 hover:bg-navy-800 text-white font-semibold px-6 py-3.5 rounded-xl transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-gold-400"></i>
+                            <span>Kontak</span>
+                        </a>
+                    </div>
+
+                    <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 max-w-lg">
+                        <div>
+                            <div class="text-2xl font-bold font-heading text-gold-400">A (80-100)</div>
+                            <div class="text-xs text-slate-400 font-medium">Nilai Magang INDOPOSCO</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold font-heading text-gold-400">10+</div>
+                            <div class="text-xs text-slate-400 font-medium">Skrip Broadcast OMG</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold font-heading text-gold-400">30 Jam</div>
+                            <div class="text-xs text-slate-400 font-medium">Pelatihan BNSP InsCinema</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-gold-500 to-amber-600 opacity-30 blur-xl"></div>
+                        <div class="relative bg-navy-900 border border-slate-800 rounded-3xl p-6 text-center space-y-4 shadow-2xl">
+                            <div class="relative w-36 h-36 mx-auto rounded-2xl bg-gradient-to-tr from-gold-400 via-amber-300 to-gold-600 p-1 shadow-xl overflow-hidden group">
+                                <img src="WhatsApp Image 2026-08-01 at 22.28.10.jpeg" 
+                                     alt="Dwi Priyo Utomo" 
+                                     class="w-full h-full object-cover object-top rounded-xl group-hover:scale-105 transition-transform duration-500"
+                                     onerror="handleImgError(this, ['assets/profile.jpg'], 'https://placehold.co/400x400/0f172a/d4af37?text=Dwi+Priyo+Utomo')">
+                                <div class="absolute inset-0 rounded-xl bg-gradient-to-t from-navy-950/40 via-transparent to-transparent pointer-events-none"></div>
+                            </div>
+                            <div>
+                                <h2 class="text-xl font-bold font-heading text-white">Dwi Priyo Utomo</h2>
+                                <p class="text-xs text-gold-400 font-medium mt-1">S.Ilkom (Broadcast) • Universitas BSI</p>
+                            </div>
+                            <div class="bg-navy-950 p-4 rounded-xl border border-slate-800/80 text-left space-y-2 text-xs">
+                                <div class="flex items-center gap-2 text-slate-300">
+                                    <i class="fa-solid fa-graduation-cap text-gold-400 w-4"></i>
+                                    <span>NIM: 44211240 (IPK Tinggi)</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-300">
+                                    <i class="fa-solid fa-briefcase text-gold-400 w-4"></i>
+                                    <span>Ex-Intern PR & Scriptwriter @ INDOPOSCO</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-300">
+                                    <i class="fa-solid fa-award text-gold-400 w-4"></i>
+                                    <span>Certified Media Relations (InsCinema & IJTI)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT & CERTIFICATIONS SECTION -->
+    <section id="about" class="py-20 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-bold text-gold-600 uppercase tracking-widest bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">Kualifikasi Resmi</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy-900">Tentang Saya & Sertifikasi</h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Rekam jejak akademik, pelatihan profesional tersertifikasi BNSP & IJTI, serta bukti sertifikat magang resmi.
+                </p>
+            </div>
+
+            <!-- CARDS GRID SERTIFIKAT -->
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- CERTIFICATE 1: InsCinema -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
+                    <div class="relative bg-navy-900 h-48 flex items-center justify-center p-4 overflow-hidden">
+                        <img src="assetssertifikat-inscinema.jpg.jpeg" 
+                             alt="Sertifikat Pelatihan LPK InsCinema" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                             onerror="handleImgError(this, ['assets/sertifikat-inscinema.jpg', 'assetssertifikat-inscinema.jpg.jpeg'], 'https://placehold.co/600x400/0f172a/d4af37?text=Sertifikat+InsCinema')">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md shadow">
+                            <i class="fa-solid fa-certificate me-1"></i> Terakreditasi BNSP
+                        </span>
+                        <button type="button" onclick="openCertModal('inscinema')" class="absolute bottom-3 right-3 bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-xs px-3 py-1.5 rounded-lg shadow flex items-center gap-1.5 transition-all">
+                            <i class="fa-solid fa-expand me-1"></i> Lihat Bukti
+                        </button>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs text-slate-500 font-semibold uppercase tracking-wider">LPK InsCinema • Feb 2025</span>
+                            <h3 class="text-lg font-bold text-navy-900 mt-1 mb-2">Pelatihan Media Relations (30 Jam)</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                                Menyelesaikan program pelatihan resmi 30 jam pembelajaran mencakup Media Relations, Tugas Mandiri, dan Presentasi Review dengan predikat <strong class="text-emerald-700">LULUS BAIK</strong>.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span>No. Peserta: 1602252404</span>
+                            <span class="font-bold text-navy-900">Predikat: BAIK</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CERTIFICATE 2: IJTI -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
+                    <div class="relative bg-navy-900 h-48 flex items-center justify-center p-4 overflow-hidden">
+                        <img src="assetssertifikat-ijti.jpg.jpeg" 
+                             alt="Sertifikat IJTI Jakarta Raya" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                             onerror="handleImgError(this, ['assets/sertifikat-ijti.jpg', 'assetssertifikat-ijti.jpg.jpeg'], 'https://placehold.co/600x400/0f172a/d4af37?text=Sertifikat+IJTI')">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md shadow">
+                            <i class="fa-solid fa-tv me-1"></i> IJTI Jakarta Raya
+                        </span>
+                        <button type="button" onclick="openCertModal('ijti')" class="absolute bottom-3 right-3 bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-xs px-3 py-1.5 rounded-lg shadow flex items-center gap-1.5 transition-all">
+                            <i class="fa-solid fa-expand me-1"></i> Lihat Bukti
+                        </button>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs text-slate-500 font-semibold uppercase tracking-wider">IJTI Jakarta Raya • Des 2022</span>
+                            <h3 class="text-lg font-bold text-navy-900 mt-1 mb-2">Pelatihan Media Relations Organisasi Jurnalis</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                                Pelatihan intensif hubungan media yang diselenggarakan oleh Ikatan Jurnalis Televisi Indonesia (IJTI) Pengda Jakarta Raya untuk standar komunikasi media berita.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span>Sertifikasi Profesi Media</span>
+                            <span class="font-bold text-navy-900">Penyelenggara: IJTI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CERTIFICATE 3: Sertifikat Magang INDOPOSCO -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
+                    <div class="relative bg-navy-900 h-48 flex items-center justify-center p-4 overflow-hidden">
+                        <img src="assetssertifikat-magang.jpg.jpeg" 
+                             alt="Sertifikat Magang INDOPOSCO" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                             onerror="handleImgError(this, ['assets/sertifikat-magang.jpg', 'assetssertifikat-magang.jpg.jpeg'], 'https://placehold.co/600x400/0f172a/d4af37?text=Sertifikat+Magang+INDOPOSCO')">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 bg-amber-500 text-navy-950 text-[10px] font-bold px-2.5 py-1 rounded-md shadow">
+                            <i class="fa-solid fa-star me-1"></i> Nilai Akhir: A
+                        </span>
+                        <button type="button" onclick="openCertModal('magang')" class="absolute bottom-3 right-3 bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-xs px-3 py-1.5 rounded-lg shadow flex items-center gap-1.5 transition-all">
+                            <i class="fa-solid fa-expand me-1"></i> Lihat Bukti
+                        </button>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs text-slate-500 font-semibold uppercase tracking-wider">PT Indonesia Digital Pos • Nov 2024</span>
+                            <h3 class="text-lg font-bold text-navy-900 mt-1 mb-2">Sertifikat Magang PR & Scriptwriter</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                                Menyelesaikan Praktik Kerja Lapangan (PKL) selama 3 bulan di www.indopos.co.id dengan hasil predikat sempurna Nilai A (80-100).
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span>No: 33/RED-IDP/PKL/XI/2024</span>
+                            <span class="font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Nilai: A</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-bold text-gold-600 uppercase tracking-widest bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">Pengalaman Kerja</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy-900">Pengalaman Profesional & Organisasi</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- EXPERIENCE CARD 1: INDOPOSCO -->
+                <div class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-bl-full pointer-events-none"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b border-slate-200 pb-4">
+                        <div>
+                            <span class="bg-navy-900 text-gold-400 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                Magang / PKL Resmi
+                            </span>
+                            <h3 class="text-xl font-bold text-navy-900 mt-2">Public Relations & Broadcast Scriptwriter Intern</h3>
+                            <p class="text-slate-600 font-medium text-sm">PT Indonesia Digital Pos (INDOPOSCO / Indopos.co.id)</p>
+                        </div>
+                        <div class="text-left sm:text-right">
+                            <span class="text-xs font-bold text-slate-500 block"><i class="fa-regular fa-calendar me-1"></i> 28 Agu - 28 Nov 2024</span>
+                            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded mt-1 inline-block">Hasil: Nilai A</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-slate-600 text-sm leading-relaxed">
+                        <div class="flex gap-3">
+                            <i class="fa-solid fa-check text-gold-500 mt-1"></i>
+                            <p><strong>Scriptwriting & Production:</strong> Melakukan riset tren isu mahasiswa dan menyusun lebih dari 10 skrip siaran interaktif untuk program podcast OMG (Obrolan Mahasiswa Gawl) di channel YouTube INDOPOSCO.</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <i class="fa-solid fa-check text-gold-500 mt-1"></i>
+                            <p><strong>Penulisan Berita Portal Digital:</strong> Menulis artikel berita harian olahraga dan nasional sesuai standar jurnalistik dan tenggat waktu redaksi Indopos.co.id.</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <i class="fa-solid fa-check text-gold-500 mt-1"></i>
+                            <p><strong>Kampanye Media Sosial:</strong> Berkontribusi aktif dalam evaluasi ide konten TikTok edukatif/editorial guna meningkatkan jangkauan pemirsa muda.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCE CARD 2: Coffee to Green -->
+                <div class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all relative overflow-hidden">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b border-slate-200 pb-4">
+                        <div>
+                            <span class="bg-purple-900 text-purple-200 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                Event Operations
+                            </span>
+                            <h3 class="text-xl font-bold text-navy-900 mt-2">Tim Operasional & Logistik Event</h3>
+                            <p class="text-slate-600 font-medium text-sm">Gelaran Coffee to Green (Depok Pembaharuan) @ Detos ON STAGE</p>
+                        </div>
+                        <div class="text-left sm:text-right">
+                            <span class="text-xs font-bold text-slate-500 block"><i class="fa-regular fa-calendar me-1"></i> Juni 2024</span>
+                            <span class="text-xs font-semibold text-purple-700 bg-purple-50 border border-purple-200 px-2.5 py-0.5 rounded mt-1 inline-block">Liputan Depok Pembaharuan</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-slate-600 text-sm leading-relaxed">
+                        <div class="flex gap-3">
+                            <i class="fa-solid fa-check text-gold-500 mt-1"></i>
+                            <p>Mengelola operasional panggung, logistik perlengkapan, serta alur pendaftaran peserta pada acara keberlanjutan kopi di Depok Town Square.</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <i class="fa-solid fa-check text-gold-500 mt-1"></i>
+                            <p>Mendampingi pelaksanaan Manual Brew Competition, Talkshow Keberlanjutan Lingkungan, serta membantu publikasi acara ke media lokal Depok.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO WORKS SECTION -->
+    <section id="portfolio" class="py-20 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-bold text-gold-600 uppercase tracking-widest bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">Galeri Bukti Karya</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy-900">Portofolio Karya & Dokumen Bukti</h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Klik tombol pada kartu karya di bawah untuk membuka dokumen bukti asli, foto liputan, maupun tayangan program.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- CARD 1: Podcast OMG -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col gold-border-glow">
+                    <div class="relative overflow-hidden bg-navy-900 h-48 flex items-center justify-center group">
+                        <img src="assetkonten-magang.jpg.jpeg" 
+                             alt="Podcast OMG Episode 33 INDOPOSCO" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90 group-hover:opacity-100"
+                             onerror="handleImgError(this, ['assets/konten-magang.jpg', 'assetkonten-magang.jpg.jpeg'], 'https://placehold.co/600x400/0f172a/d4af37?text=Podcast+OMG+Episode+33')">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md shadow-xs">
+                            <i class="fa-brands fa-youtube me-1"></i> Broadcast Scriptwriter
+                        </span>
+                        <button type="button" onclick="openCertModal('podcast')" class="absolute bottom-3 right-3 bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-xs px-3 py-1.5 rounded-lg shadow flex items-center gap-1.5 transition-all">
+                            <i class="fa-solid fa-play me-1"></i> Detail / Lihat Bukti
+                        </button>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">Scriptwriter Podcast OMG (INDOPOSCO Channel)</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">Episode 33: "Diem-Diem Nge-Up Uang Kuliah"</p>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Menyusun naskah dan alur naskah interaktif mengenai isu isu perkuliahan mahasiswa untuk siaran studio tayang di YouTube INDOPOSCO Channel.
+                        </p>
+                        <div class="mt-auto pt-3 border-t border-slate-100 flex flex-wrap gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">Scriptwriting</span>
+                            <span class="bg-slate-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">Broadcast Research</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2: Penulisan Berita Harian Indopos.co.id -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col gold-border-glow">
+                    <div class="relative overflow-hidden bg-navy-900 h-48 flex items-center justify-center group">
+                        <img src="assetberitaharian-magang.jpg.jpeg" 
+                             alt="Bukti Berita Indopos.co.id" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90 group-hover:opacity-100"
+                             onerror="handleImgError(this, ['assets/beritaharian-magang.jpg', 'assetberitaharian-magang.jpg.jpeg'], 'https://placehold.co/600x400/0f172a/d4af37?text=Berita+Indopos.co.id')">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md shadow-xs">
+                            <i class="fa-solid fa-newspaper me-1"></i> Penulisan Berita
+                        </span>
+                        <button type="button" onclick="openCertModal('berita')" class="absolute bottom-3 right-3 bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-xs px-3 py-1.5 rounded-lg shadow flex items-center gap-1.5 transition-all">
+                            <i class="fa-solid fa-expand me-1"></i> Lihat Bukti Full
+                        </button>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">Penulisan Berita Portal Digital Indopos.co.id</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">Redaksi PT Indonesia Digital Pos • Nov 2024</p>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Menyusun artikel berita harian olahraga & nasional sesuai standar etika jurnalistik digital dan batas waktu kecepatan terbit media.
+                        </p>
+                        <div class="mt-auto pt-3 border-t border-slate-100 flex flex-wrap gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">Digital News</span>
+                            <span class="bg-slate-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">Journalism</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3: Dokumentasi Kegiatan Magang -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col gold-border-glow">
+                    <div class="relative overflow-hidden bg-navy-900 h-48 flex items-center justify-center group">
+                        <img src="WhatsApp Image 2026-08-01 at 21.50.09.jpeg" 
+                             alt="Dokumentasi Magang INDOPOSCO" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90 group-hover:opacity-100"
+                             onerror="handleImgError(this, ['WhatsApp Image 2026-08-01 at 21.50.44.jpeg'], 'https://placehold.co/600x400/0f172a/d4af37?text=Dokumentasi+Magang')">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md shadow-xs">
+                            <i class="fa-solid fa-camera me-1"></i> Dokumentasi
+                        </span>
+                        <button type="button" onclick="openCertModal('magang_kegiatan')" class="absolute bottom-3 right-3 bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-xs px-3 py-1.5 rounded-lg shadow flex items-center gap-1.5 transition-all">
+                            <i class="fa-solid fa-images me-1"></i> Foto Kegiatan
+                        </button>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">Kegiatan Operasional & Shooting Magang</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">Redaksi & Studio Produksi INDOPOSCO</p>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Dokumentasi rapat evaluasi redaksi bersama tim mentor serta operasional alat produksi shooting outdoor konten podcast.
+                        </p>
+                        <div class="mt-auto pt-3 border-t border-slate-100 flex flex-wrap gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">Redaksi Setup</span>
+                            <span class="bg-slate-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">Studio Shooting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4: Coffee To Green Event Operations -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col gold-border-glow">
+                    <div class="relative overflow-hidden bg-navy-900 h-48 flex items-center justify-center group">
+                        <img src="assetcoffetogreen-event.jpg.jpeg" 
+                             alt="Gelaran Coffee to Green Depok Pembaharuan" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90 group-hover:opacity-100"
+                             onerror="handleImgError(this, ['WhatsApp Image 2026-08-01 at 21.55.49.jpeg', 'assets/event-coffeetogreen.jpeg'], 'https://placehold.co/600x400/0f172a/d4af37?text=Gelaran+Coffee+to+Green')">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent"></div>
+                        <span class="absolute top-3 left-3 bg-purple-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md shadow-xs">
+                            <i class="fa-solid fa-calendar-check me-1"></i> Event Operations
+                        </span>
+                        <button type="button" onclick="openCertModal('coffeetogreen')" class="absolute bottom-3 right-3 bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-xs px-3 py-1.5 rounded-lg shadow flex items-center gap-1.5 transition-all">
+                            <i class="fa-solid fa-newspaper me-1"></i> Liputan & Foto
+                        </button>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">Gelaran Coffee to Green (Depok Pembaharuan)</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">Depok Town Square (Detos) • Juni 2024</p>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Mengelola operasional logistik, pendaftaran vendor, serta pendampingan jalannya talkshow dan kompetisi manual brew pada acara keberlanjutan lingkungan.
+                        </p>
+                        <div class="mt-auto pt-3 border-t border-slate-100 flex flex-wrap gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">Logistics Setup</span>
+                            <span class="bg-slate-100 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">Vendor Relations</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-bold text-gold-600 uppercase tracking-widest bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">Kompetensi Utama</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy-900">Keahlian & Kemampuan Teknis</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center text-gold-600 text-2xl mb-4">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-3">Public & Media Relations</h3>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i> Penulisan Press Release</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i> Komunikasi Media Massa</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i> Manajemen Reputasi</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center text-gold-600 text-2xl mb-4">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-3">Broadcast & Scriptwriting</h3>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i> Naskah Talkshow & Podcast</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i> Riset Topik & Isu Tren</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i> Jurnalistik Digital</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center text-gold-600 text-2xl mb-4">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-3">Event Operations & Social Media</h3>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i> Logistik & Panggung Event</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i> Evaluasi Konten TikTok</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i> Kerjasama Vendor & Panitia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <footer id="contact" class="bg-navy-950 text-white py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+                <div>
+                    <h2 class="text-3xl font-heading font-bold text-white mb-4">Mari Bekerja Sama</h2>
+                    <p class="text-slate-400 text-sm max-w-md leading-relaxed">
+                        Terbuka untuk kesempatan karir di bidang Public Relations, Corporate Communications, Broadcast Scriptwriter, dan Event Operations.
+                    </p>
+                </div>
+                <div class="space-y-3 bg-navy-900 p-6 rounded-2xl border border-slate-800">
+                    <div class="flex items-center gap-3 text-sm text-slate-300">
+                        <i class="fa-solid fa-envelope text-gold-400 w-5"></i>
+                        <span>Email: <strong class="text-white">dwipriyoutomo@gmail.com</strong></span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-slate-300">
+                        <i class="fa-solid fa-location-dot text-gold-400 w-5"></i>
+                        <span>Lokasi: Depok / Jakarta, Indonesia</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-slate-300">
+                        <i class="fa-solid fa-graduation-cap text-gold-400 w-5"></i>
+                        <span>Lulusan: Ilmu Komunikasi (BSI Margonda)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+                &copy; 2026 Dwi Priyo Utomo. All Rights Reserved. Portofolio Profesional Public Relations.
+            </div>
+        </div>
+    </footer>
+
+    <!-- CERTIFICATE & PROOF LIGHTBOX MODAL -->
+    <div id="certModal" class="fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden relative animate-fadeIn my-auto">
+            <!-- Modal Header -->
+            <div class="p-5 border-b border-slate-100 flex items-start justify-between bg-navy-900 text-white">
+                <div>
+                    <h3 id="modalTitle" class="text-lg font-bold text-white"></h3>
+                    <p id="modalSubtitle" class="text-xs text-gold-400 mt-1"></p>
+                </div>
+                <button type="button" onclick="closeCertModal()" class="text-slate-400 hover:text-white text-xl p-1 transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto space-y-4 text-slate-700 text-sm">
+                <div class="w-full bg-navy-950 rounded-xl overflow-hidden flex items-center justify-center min-h-[250px] max-h-[450px]">
+                    <img id="modalImg" src="" alt="Bukti Sertifikat / Dokumentasi" class="max-h-[450px] w-auto object-contain">
+                </div>
+                <div id="modalDetails" class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-200 text-slate-600 text-xs sm:text-sm"></div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="p-4 border-t border-slate-100 bg-slate-50 flex justify-end">
+                <button type="button" onclick="closeCertModal()" class="bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL SCRIPT LOGIC -->
+    <script>
+        const certData = {
+            coffeetogreen: {
+                title: "Bukti Kegiatan & Liputan Media: Gelaran Coffee to Green",
+                subtitle: "Depok Pembaharuan (Debar) - 14 Juni 2024 @ Detos ON STAGE",
+                imageSources: ["assetcoffetogreen-event.jpg.jpeg", "WhatsApp Image 2026-08-01 at 21.55.49.jpeg", "assets/event-coffeetogreen.jpeg"],
+                fallbackImage: "https://placehold.co/800x550/0f172a/d4af37?text=Gelaran+Coffee+to+Green",
+                details: "<p><strong>Nama Acara:</strong> Coffee to Green (Secangkir Kopi, Sejuta Manfaat)</p>" +
+                         "<p><strong>Lokasi & Tanggal:</strong> Detos ON STAGE (Depok Town Square), 14 Juni 2024</p>" +
+                         "<p><strong>Publikasi Media:</strong> Depok Pembaharuan / Debar (<em>\"Gelaran Coffee to Green Sukses Mengusung Praktik Kopi Berkelanjutan di Depok\"</em>)</p>" +
+                         "<p><strong>Peran & Tanggung Jawab:</strong> Mengelola operasional logistik, koordinasi panggung & pendaftaran vendor, serta pendampingan jalannya talkshow, manual brew competition, dan workshop.</p>" +
+                         "<p><strong>Hasil:</strong> Acara berlangsung lancar dengan kehadiran seluruh panitia, peserta kompetisi, serta publikasi berita positif di media lokal Depok.</p>"
+            },
+            podcast: {
+                title: "Bukti Konten: Broadcast Scriptwriter - Podcast OMG",
+                subtitle: "INDOPOSCO Channel - Episode 33 ('Diem-Diem Nge-Up Uang Kuliah')",
+                imageSources: ["assetkonten-magang.jpg.jpeg", "assets/konten-magang.jpg"],
+                fallbackImage: "https://placehold.co/800x550/0f172a/d4af37?text=Podcast+OMG+INDOPOSCO",
+                details: "<p><strong>Program:</strong> OMG (Obrolan Mahasiswa Gawl) - Episode 33</p>" +
+                         "<p><strong>Judul Episode:</strong> Diem-Diem Nge-Up Uang Kuliah</p>" +
+                         "<p><strong>Platform:</strong> INDOPOSCO Channel (YouTube)</p>" +
+                         "<p><strong>Peran:</strong> Script Writer Intern (Public Relations Division)</p>" +
+                         "<p><strong>Deskripsi Tugas:</strong> Melakukan riset topik tren mahasiswa, menyusun naskah/skrip siaran interaktif, serta berkolaborasi dengan tim produksi studio INDOPOSCO.</p>"
+            },
+            berita: {
+                title: "Bukti Penulisan Berita Harian - Indopos.co.id",
+                subtitle: "Portal Berita Resmi INDOPOSCO (Media Digital)",
+                imageSources: ["assetberitaharian-magang.jpg.jpeg", "assets/beritaharian-magang.jpg"],
+                fallbackImage: "https://placehold.co/800x550/0f172a/d4af37?text=Berita+Indopos.co.id",
+                details: "<p><strong>Media:</strong> Indopos.co.id (PT Indonesia Digital Pos)</p>" +
+                         "<p><strong>Artikel Contoh:</strong> 'Kalahkan Arab Saudi, Begini Pesan Ketua Umum Erick Thohir Buat Timnas'</p>" +
+                         "<p><strong>Tanggal Terbit:</strong> Senin, 25 November 2024</p>" +
+                         "<p><strong>Peran:</strong> Penulis Berita / Tim Redaksi Magang</p>" +
+                         "<p><strong>Deskripsi:</strong> Menyusun berita harian sesuai standar jurnalistik, etika penulisan media, dan tenggat waktu publikasi portal digital.</p>"
+            },
+            magang_kegiatan: {
+                title: "Dokumentasi Operasional & Sesi Redaksi Magang",
+                subtitle: "PT Indonesia Digital Pos (INDOPOSCO) - Aug 2024 - Nov 2024",
+                imageSources: ["WhatsApp Image 2026-08-01 at 21.50.09.jpeg", "WhatsApp Image 2026-08-01 at 21.50.44.jpeg"],
+                fallbackImage: "https://placehold.co/800x550/0f172a/d4af37?text=Dokumentasi+Magang+INDOPOSCO",
+                details: "<p><strong>Lokasi:</strong> Kantor Redaksi & Studio Produksi INDOPOSCO</p>" +
+                         "<p><strong>Kegiatan:</strong> Mengikuti rapat evaluasi redaksi harian, diskusi ide konten dengan pembimbing lapang, serta keterlibatan langsung dalam proses shooting outdoor dan persiapan alat siaran.</p>"
+            },
+            inscinema: {
+                title: "Sertifikat Pelatihan Media Relations - LPK InsCinema",
+                subtitle: "Lisensi LPK: 1/G.1/31.75.02.1006.02.062.C.1/3/-1.851.332/e/2021 | Terakreditasi BNSP",
+                imageSources: ["assetssertifikat-inscinema.jpg.jpeg", "assets/sertifikat-inscinema.jpg"],
+                fallbackImage: "https://placehold.co/800x550/0f172a/d4af37?text=Sertifikat+LPK+InsCinema",
+                details: "<p><strong>Nomor Peserta:</strong> 1602252404</p>" +
+                         "<p><strong>Tanggal Pelaksanaan:</strong> 16 - 23 Februari 2025 (Terbit: 24 Februari 2025)</p>" +
+                         "<p><strong>Predikat:</strong> LULUS dengan Predikat BAIK</p>" +
+                         "<p><strong>Rincian Jam Pembelajaran (Total 30 Jam):</strong></p>" +
+                         "<ul class=\"list-disc list-inside ms-2 text-slate-600\">" +
+                         "<li>Pelatihan Media Relations: 10 Jam</li>" +
+                         "<li>Tugas Mandiri: 15 Jam</li>" +
+                         "<li>Presentasi & Review: 5 Jam</li>" +
+                         "</ul>"
+            },
+            ijti: {
+                title: "Sertifikat Pelatihan Media Relations - IJTI Jakarta Raya",
+                subtitle: "Ikatan Jurnalis Televisi Indonesia (IJTI)",
+                imageSources: ["assetssertifikat-ijti.jpg.jpeg", "assets/sertifikat-ijti.jpg"],
+                fallbackImage: "https://placehold.co/800x550/0f172a/d4af37?text=Sertifikat+IJTI+Jakarta+Raya",
+                details: "<p><strong>Penyelenggara:</strong> IJTI (Ikatan Jurnalis Televisi Indonesia) Pengda Jakarta Raya</p>" +
+                         "<p><strong>Tanggal Pelaksanaan:</strong> 05 - 13 Desember 2022 (Terbit: 03 Januari 2022/2023)</p>" +
+                         "<p><strong>Peran:</strong> Peserta Pelatihan Media Relations</p>" +
+                         "<p><strong>Kompetensi:</strong> Pemahaman praktis hubungan media, penulisan siaran pers, dan etika komunikasi media massa.</p>"
+            },
+            magang: {
+                title: "Sertifikat PKL / Magang - PT Indonesia Digital Pos (INDOPOSCO)",
+                subtitle: "No. Sertifikat: 33/RED-IDP/PKL/XI/2024",
+                imageSources: ["assetssertifikat-magang.jpg.jpeg", "assets/sertifikat-magang.jpg"],
+                fallbackImage: "https://placehold.co/800x550/0f172a/d4af37?text=Sertifikat+Magang+INDOPOSCO",
+                details: "<p><strong>Perusahaan:</strong> PT Indonesia Digital Pos (INDOPOSCO / Indopos.co.id)</p>" +
+                         "<p><strong>Durasi Magang:</strong> 3 Bulan (28 Agustus - 28 November 2024)</p>" +
+                         "<p><strong>Nilai Akhir Magang:</strong> <span class=\"text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200\">A (80 - 100)</span></p>" +
+                         "<p><strong>Penandatangan:</strong> Juni Armanto (Direktur Konten PT Indonesia Digital Pos)</p>"
+            }
+        };
+
+        function openCertModal(key) {
+            const data = certData[key];
+            if (!data) return;
+
+            const modalTitle = document.getElementById('modalTitle');
+            const modalSubtitle = document.getElementById('modalSubtitle');
+            const modalDetails = document.getElementById('modalDetails');
+            const modalImg = document.getElementById('modalImg');
+            const modal = document.getElementById('certModal');
+
+            if (!modal || !modalTitle || !modalSubtitle || !modalDetails || !modalImg) return;
+
+            modalTitle.innerText = data.title;
+            modalSubtitle.innerText = data.subtitle;
+            modalDetails.innerHTML = data.details;
+
+            modalImg.dataset.fallbackIndex = '0';
+            const firstSrc = (data.imageSources && data.imageSources.length > 0) ? data.imageSources[0] : data.fallbackImage;
+            
+            modalImg.onerror = function() {
+                handleImgError(this, data.imageSources, data.fallbackImage);
+            };
+            modalImg.src = firstSrc;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertModal() {
+            const modal = document.getElementById('certModal');
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside modal content
+        document.getElementById('certModal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCertModal();
+            }
+        });
+
+        // Close modal on ESC key press
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeCertModal();
+            }
+        });
+    </script>
+</body>
+</html>
